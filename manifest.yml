@@ -1,0 +1,57 @@
+app:
+  id: ari:cloud:ecosystem::app/8df0719d-61a4-4ba4-8db2-771e0abdc9aa
+  runtime:
+    architecture: arm64
+    memoryMB: 256
+    name: nodejs22.x
+modules:
+  rovo:agent:
+    - key: forge-rovo-guardrail-project
+      name: Project Guardrail Agent
+      description: Assess the quality of a project work breakdown structure
+      actions:
+        - get-project-wbs
+      conversationStarters:
+        - Assess the quality of this project
+      prompt: resource:agent-prompts;agent-instructions.md
+  action:
+    - key: get-project-wbs
+      name: Fetch project work breakdown structure
+      description: Fetch project work breakdown structure
+      actionVerb: GET
+      function: fetchProjectWbs
+      inputs:
+        projectKey:
+          title: Project Key
+          description: The Key of the target project
+          required: false
+          type: string
+  trigger:
+    - key: trigger-lifecycle
+      events:
+        - avi:forge:installed:app
+        - avi:forge:upgraded:app
+      function: lifecycle-handler
+  webtrigger:
+    - key: dev-trigger
+      function: trigger
+      response:
+        type: dynamic
+  function:
+    - key: fetchProjectWbs
+      handler: index.fetchProjectWbs
+    - key: trigger
+      handler: index.trigger
+    - key: lifecycle-handler
+      handler: index.lifecycle
+permissions:
+  scopes:
+    - read:jira-work
+    - read:board-scope:jira-software
+    - read:issue-details:jira
+    - read:jql:jira
+    - read:jira-user
+    - read:chat:rovo
+resources:
+  - key: agent-prompts
+    path: prompts

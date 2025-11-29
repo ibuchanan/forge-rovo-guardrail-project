@@ -1,0 +1,37 @@
+{
+  "name": "forge-rovo-guardrail-project",
+  "version": "0.0.0",
+  "private": true,
+  "description": "a sample Forge-based Rovo Agent that checks project health",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "actiontypes": "tsx ./scripts/actiontypes.ts && biome format --write",
+    "build": "tsc",
+    "changelog": "git cliff",
+    "check": "biome check --write",
+    "clean": "rm -rf ./dist",
+    "eval": "promptfoo eval",
+    "format": "biome format --write",
+    "lint": "biome lint",
+    "test": "vitest",
+    "view": "promptfoo view"
+  },
+  "dependencies": {
+    "@forge/api": "^6.4.0",
+    "jmespath": "^0.16.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@types/jmespath": "^0.15.2",
+    "@types/node": "^24.10.1",
+    "promptfoo": "^0.119.13",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  },
+  "engines": {
+    "node": "22.18.0"
+  }
+}
