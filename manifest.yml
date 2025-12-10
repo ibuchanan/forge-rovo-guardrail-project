@@ -38,12 +38,14 @@ modules:
       response:
         type: dynamic
   function:
-    - key: fetchProjectWbs
-      handler: index.fetchProjectWbs
+    - key: logAssessment
+      handler: index.logAssessment
     - key: trigger
       handler: index.trigger
     - key: lifecycle-handler
       handler: index.lifecycle
+    - key: fetchProjectWbs
+      handler: index.fetchWbsContentFromProject
 permissions:
   scopes:
     - read:jira-work

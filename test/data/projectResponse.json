@@ -1,0 +1,100 @@
+{
+  "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+  "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011",
+  "id": "10011",
+  "key": "MC",
+  "description": "",
+  "lead": {
+    "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/user?accountId=60ad2d2a06bf0c006a42fa84",
+    "accountId": "60ad2d2a06bf0c006a42fa84",
+    "avatarUrls": {
+      "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/48",
+      "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/24",
+      "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/16",
+      "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/32"
+    },
+    "displayName": "Alana Grant",
+    "active": true
+  },
+  "components": [],
+  "issueTypes": [
+    {
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10044",
+      "id": "10044",
+      "description": "",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10800?size=medium",
+      "name": "Campaign",
+      "subtask": false,
+      "avatarId": 10800,
+      "hierarchyLevel": 2
+    },
+    {
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10047",
+      "id": "10047",
+      "description": "",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10799?size=medium",
+      "name": "Deliverable",
+      "subtask": false,
+      "avatarId": 10799,
+      "hierarchyLevel": 1
+    },
+    {
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10026",
+      "id": "10026",
+      "description": "A digital or physical item to be tracked.",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10313?size=medium",
+      "name": "Marketing Asset",
+      "subtask": false,
+      "avatarId": 10313,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10002",
+      "id": "10002",
+      "description": "A small, distinct piece of work.",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+      "name": "Task",
+      "subtask": false,
+      "avatarId": 10318,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10003",
+      "id": "10003",
+      "description": "A small piece of work that's part of a larger task.",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 10316,
+      "hierarchyLevel": -1
+    }
+  ],
+  "assigneeType": "UNASSIGNED",
+  "versions": [],
+  "name": "Marketing Content",
+  "roles": {
+    "atlassian-addons-project-access": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011/role/10003",
+    "Service Desk Team": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011/role/10005",
+    "Service Desk Customers": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011/role/10004",
+    "Administrators": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011/role/10002",
+    "Member": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/project/10011/role/10019"
+  },
+  "avatarUrls": {
+    "48x48": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/universal_avatar/view/type/project/avatar/10900",
+    "24x24": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/universal_avatar/view/type/project/avatar/10900?size=small",
+    "16x16": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/universal_avatar/view/type/project/avatar/10900?size=xsmall",
+    "32x32": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/universal_avatar/view/type/project/avatar/10900?size=medium"
+  },
+  "projectCategory": {
+    "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/projectCategory/10000",
+    "id": "10000",
+    "name": "One Atlassian",
+    "description": "One Atlassian configured demo data project"
+  },
+  "projectTypeKey": "business",
+  "simplified": false,
+  "style": "classic",
+  "isPrivate": false,
+  "properties": {},
+  "isLiveTemplate": false
+}
