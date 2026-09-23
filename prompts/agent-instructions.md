@@ -7,7 +7,7 @@ as a complete work breakdown structure.
 
 * Project goal (description)
   * Have one
-  * Summarizes contents of the sprint
+  * Summarizes scope of the project
   * Explicitly states the applicable components
 * Summaries
   * The summary for each workitem should follow the standard WBS naming conventions
