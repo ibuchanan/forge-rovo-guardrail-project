@@ -43,7 +43,17 @@ export interface ResultIssue<T> {
 //   priority?: string;
 // }
 
-type RequestedFields = Record<string, any>;
+/**
+ * The `fields` (or `renderedFields`) object of a Jira issue search result.
+ * Jira returns whatever fields were requested, so most values are `unknown`
+ * until a mapper inspects them. The few fields this app reads directly are
+ * declared explicitly so TypeScript can check those accesses.
+ */
+export interface RequestedFields {
+  summary: string;
+  parent?: { key: string };
+  [field: string]: unknown;
+}
 
 export interface SpecifiedFields {
   key: string;
@@ -67,7 +77,10 @@ export function mapResultToCard(
     key: jiraApiResponse.key,
     url: jiraApiResponse.self,
     summary: jiraApiResponse.fields.summary,
-    description: jiraApiResponse.renderedFields?.description,
+    // Rendered (HTML) fields are strings, unlike the raw ADF description.
+    description: jiraApiResponse.renderedFields?.description as
+      | string
+      | undefined,
   };
   // console.debug(`specified: ${JSON.stringify(specified)}`);
   const frontmatter: Record<string, string | string[]> = realizedFields.reduce(
@@ -152,10 +165,6 @@ export interface Schema {
   items?: string;
 }
 
-interface ExpandSchema {
-  schema: Record<string, Schema>;
-}
-
 export interface ContentField {
   name: string;
   type: ContentType;
@@ -221,32 +230,40 @@ function getFieldFromMeta(name: string, meta: Meta) {
   return undefined;
 }
 
-function adf2md(o: any) {
+function adf2md(_adf: unknown): string {
   // TODO: implement ADF to MD
   return "";
 }
 
-type MetaSchemaTypeStringFunction = (o: any) => string;
-type MetaSchemaTypeStringArrayFunction = (o: any) => Array<string>;
+/**
+ * Reads a string property (like `name` or `displayName`) from a Jira field
+ * object. Jira returns `null` for empty fields (e.g. an unassigned assignee),
+ * so anything that is not an object with a string property becomes "".
+ */
+function readStringProperty(value: unknown, property: string): string {
+  if (typeof value !== "object" || value === null) return "";
+  const result = (value as Record<string, unknown>)[property];
+  return typeof result === "string" ? result : "";
+}
+
+/** Plain string-like fields (text, dates) pass through; empty values become "". */
+function readString(value: unknown): string {
+  return typeof value === "string" ? value : "";
+}
+
+// Converts one Jira field value into a string, based on its schema type.
+type MetaSchemaTypeStringFunction = (value: unknown) => string;
 type MetaSchemaTypes = Record<string, MetaSchemaTypeStringFunction>;
-type MetaSchemaArrayTypes = Record<string, MetaSchemaTypeStringArrayFunction>;
 
+// Keyed by the Jira field schema `type` (from `expand=schema`).
+// TODO: Add mappers for array types (component, attachment, issuelinks, etc).
 const mapMetaToString: MetaSchemaTypes = {
-  issuetype: (o: any) => o.name,
-  string: (o: any) => o,
-  user: (o: any) => o.displayName,
-  description: (o: any) => adf2md(o), // Or get this from renderedFields
-  priority: (o: any) => o.name,
-  option: (o: any) => o.value,
-  datetime: (o: any) => o,
-  status: (o: any) => o.name,
-};
-
-const mapArrayToStringArray: MetaSchemaArrayTypes = {
-  component: (o: any) => [""],
-  attachment: (o: any) => [""],
-  issuelinks: (o: any) => [""],
-  string: (o: any) => [""],
-  user: (o: any) => [""],
-  "sd-customerorganization": (o: any) => [""],
+  issuetype: (value) => readStringProperty(value, "name"),
+  string: readString,
+  user: (value) => readStringProperty(value, "displayName"),
+  description: (value) => adf2md(value), // Or get this from renderedFields
+  priority: (value) => readStringProperty(value, "name"),
+  option: (value) => readStringProperty(value, "value"),
+  datetime: readString,
+  status: (value) => readStringProperty(value, "name"),
 };

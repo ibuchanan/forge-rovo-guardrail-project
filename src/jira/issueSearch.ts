@@ -2,7 +2,7 @@ import { route } from "@forge/api";
 import { Queue } from "elegant-queue";
 import { type CommonEvent, getAuthForEvent } from "../forge/events";
 import type { RovoContext } from "../rovo/action";
-import type { ResultIssue, Schema } from "./issue";
+import type { RequestedFields, ResultIssue, Schema } from "./issue";
 
 export interface JqlRequest extends CommonEvent {
   jql: string;
@@ -39,12 +39,8 @@ const START_STATE: PagedSearchResponse<FieldsResponse> = {
   nextPageToken: null,
   isLast: false,
 };
-interface DefaultResponse {
-  id: string;
-}
-type FieldsResponse = ResultIssue<Record<string, any>>;
+type FieldsResponse = ResultIssue<RequestedFields>;
 type IssueResponse = FieldsResponse;
-const defaultFields = ["id"];
 
 export async function fetchIssueSchemaFromJql(
   payload: JqlRequest,
@@ -140,7 +136,9 @@ export async function* listIssuesFromJql(
   while (!defer.isEmpty()) {
     try {
       const deferredWorkitem = defer.dequeue();
-      console.debug(`WBS: deferred workitem ${JSON.stringify(deferredWorkitem)}`);
+      console.debug(
+        `WBS: deferred workitem ${JSON.stringify(deferredWorkitem)}`,
+      );
       // TODO: Parents & children can have different workflow states; need to get parent if excluded from the initial search
       // const reprocess = yield deferredWorkitem;
       // if (reprocess !== undefined) {
@@ -149,7 +147,9 @@ export async function* listIssuesFromJql(
       console.debug(`WBS: Deferred issues = ${defer.size()}`);
     } catch (error) {
       console.error(error);
-      throw new Error(`Failed to process deferred issues. Peek next: ${JSON.stringify(defer.peek())}\n`);
+      throw new Error(
+        `Failed to process deferred issues. Peek next: ${JSON.stringify(defer.peek())}\n`,
+      );
     }
   }
 }

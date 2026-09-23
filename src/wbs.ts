@@ -2,6 +2,7 @@ import YAML from "yaml";
 import type { FetchProjectWbsPayload } from "./actionpayload";
 import {
   mapSchemaedResultToCard,
+  type RequestedFields,
   type ResultIssue,
   type Schema,
 } from "./jira/issue";
@@ -32,8 +33,6 @@ export const workitemContentFields: Array<ContentField> = [
 // TODO: Due date & even start date?
 // TODO: Linked Issues, and what's the text representation?
 const FIELDS = ["issuetype", "summary", "", "assignee", "", "status", "parent"];
-
-type RequestedFields = Record<string, any>;
 
 class WbsNode {
   expand: string;
@@ -88,21 +87,23 @@ const EXTRANEOUS_PROJECT_KEYS = [
   "versions",
 ];
 const EXTRANEOUS_ISSUE_KEYS = ["description", "issuetype", "parent"];
-function filterAndSortKeys(obj: any): any {
+function filterAndSortKeys(obj: unknown): unknown {
   if (typeof obj !== "object" || obj === null) {
     return obj;
   }
   if (Array.isArray(obj)) {
     return obj.map(filterAndSortKeys);
   }
-  const keys = Object.keys(obj).sort();
+  // At this point obj is a plain object, so it's safe to index by key.
+  const source = obj as Record<string, unknown>;
+  const keys = Object.keys(source).sort();
   const ixKey = keys.indexOf("key");
   keys.splice(ixKey, 1);
   keys.unshift("key");
   const ixChildren = keys.indexOf("children");
   keys.splice(ixChildren, 1);
   keys.push("children");
-  const newObj: any = {};
+  const newObj: Record<string, unknown> = {};
   for (const key of keys) {
     if (EXTRANEOUS_COMMON_KEYS.includes(key)) {
       // skip it
@@ -111,7 +112,7 @@ function filterAndSortKeys(obj: any): any {
     } else if (EXTRANEOUS_ISSUE_KEYS.includes(key)) {
       // skip it
     } else {
-      newObj[key] = filterAndSortKeys(obj[key]);
+      newObj[key] = filterAndSortKeys(source[key]);
     }
   }
   return newObj;
@@ -165,9 +166,7 @@ export async function fetchWbsContentFromProject(
     if (issue.value.fields.parent) {
       const parent = root.index.get(issue.value.fields.parent.key);
       if (parent) {
-        console.debug(
-          `WBS: ${parent.key} adopting ${issue.value.key}`,
-        );
+        console.debug(`WBS: ${parent.key} adopting ${issue.value.key}`);
         root.adopt(parent, issue.value);
         issue = await issues.next();
       } else {

@@ -1,6 +1,6 @@
 import { asApp, asUser } from "@forge/api";
 // import type { InstallationEvent, UpgradeEvent } from "./lifecycle";
-import { truncateEvents } from "./logging";
+// Re-add `import { truncateEvents } from "./logging";` to enable the debug logs below.
 
 export interface UniquelyIdentifiedObject {
   id: string;
