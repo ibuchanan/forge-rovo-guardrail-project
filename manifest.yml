@@ -3,7 +3,7 @@ app:
   runtime:
     architecture: arm64
     memoryMB: 256
-    name: nodejs22.x
+    name: nodejs24.x
 modules:
   rovo:agent:
     - key: forge-rovo-guardrail-project
