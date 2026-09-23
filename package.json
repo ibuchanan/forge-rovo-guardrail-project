@@ -18,21 +18,21 @@
     "view": "promptfoo view"
   },
   "dependencies": {
-    "@forge/api": "^6.4.1",
-    "elegant-queue": "^1.0.8",
-    "jmespath": "^0.16.0",
-    "yaml": "^2.8.2"
+    "@forge/api": "^8.1",
+    "elegant-queue": "^1.0",
+    "jmespath": "^0.16",
+    "yaml": "^2.9"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.8",
-    "@types/jmespath": "^0.15.2",
+    "@biomejs/biome": "2.5.14",
+    "@types/jmespath": "^0.15",
     "@types/node": "22",
-    "promptfoo": "^0.120",
-    "tsx": "4",
+    "promptfoo": "^0.123",
+    "tsx": "^4.23",
     "typescript": "^5.9.3",
-    "vitest": "4"
+    "vitest": "^5.0"
   },
   "engines": {
-    "node": "24.11.0"
+    "node": "24.21.0"
   }
 }
