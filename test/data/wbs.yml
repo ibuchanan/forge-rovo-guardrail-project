@@ -1,0 +1,477 @@
+key: MOBL
+assigneeType: PROJECT_LEAD
+id: "10010"
+isLiveTemplate: false
+isPrivate: false
+name: Mobile Dev
+projectCategory:
+  id: "10000"
+projectTypeKey: software
+simplified: false
+style: classic
+children:
+  - key: MOBL-1
+    assignee: Mitch Davis
+    id: "10022"
+    issuetype: Epic
+    status: To Do
+    summary: iOS Platform Update
+    children:
+      - key: MOBL-8
+        assignee: Mitch Davis
+        id: "10151"
+        issuetype: Story
+        parent:
+          key: MOBL-1
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10022"
+        status: To Do
+        summary: Password security update
+        children: []
+      - key: MOBL-20
+        assignee: Alana Grant
+        id: "10172"
+        issuetype: Story
+        parent:
+          key: MOBL-1
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10022"
+        status: To Do
+        summary: Change login related support documentation
+        children: []
+      - key: MOBL-25
+        assignee: Mitch Davis
+        id: "10177"
+        issuetype: Story
+        parent:
+          key: MOBL-1
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10022"
+        status: To Do
+        summary: iOS Version Upgrade Notes
+        children: []
+      - key: MOBL-28
+        assignee: Alana Grant
+        id: "10180"
+        issuetype: Story
+        parent:
+          key: MOBL-1
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10022"
+        status: To Do
+        summary: Investigate scalability issue when user volume exceeds 20k
+        children: []
+  - key: MOBL-2
+    assignee: Mitch Davis
+    id: "10023"
+    issuetype: Epic
+    status: To Do
+    summary: Mobile App
+    children:
+      - key: MOBL-22
+        assignee: Mitch Davis
+        id: "10174"
+        issuetype: Story
+        parent:
+          key: MOBL-2
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10023"
+        status: To Do
+        summary: Mobile sync bug
+        children: []
+      - key: MOBL-43
+        assignee: Mitch Davis
+        id: "59151"
+        issuetype: Story
+        parent:
+          key: MOBL-2
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10023"
+        status: To Do
+        summary: Mobile User Login
+        children:
+          - key: MOBL-44
+            assignee: Mitch Davis
+            id: "59154"
+            issuetype: Sub-task
+            parent:
+              key: MOBL-43
+              fields:
+                issuetype:
+                  avatarId: 10315
+                  hierarchyLevel: 0
+                  iconUrl: https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium
+                  id: "10022"
+                  name: Story
+                priority:
+                  iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+                  id: "10000"
+              id: "59151"
+            status: To Do
+            summary: Loyalty program integration
+            children: []
+          - key: MOBL-45
+            assignee: Mitch Davis
+            id: "59155"
+            issuetype: Sub-task
+            parent:
+              key: MOBL-43
+              fields:
+                issuetype:
+                  avatarId: 10315
+                  hierarchyLevel: 0
+                  iconUrl: https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium
+                  id: "10022"
+                  name: Story
+                priority:
+                  iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+                  id: "10000"
+              id: "59151"
+            status: To Do
+            summary: Customization options for food items
+            children: []
+      - key: MOBL-47
+        assignee: Mitch Davis
+        id: "59157"
+        issuetype: Story
+        parent:
+          key: MOBL-2
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10023"
+        status: To Do
+        summary: Two-Factor Authentication
+        children:
+          - key: MOBL-48
+            assignee: Mitch Davis
+            id: "59158"
+            issuetype: Sub-task
+            parent:
+              key: MOBL-47
+              fields:
+                issuetype:
+                  avatarId: 10315
+                  hierarchyLevel: 0
+                  iconUrl: https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium
+                  id: "10022"
+                  name: Story
+                priority:
+                  iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+                  id: "10000"
+              id: "59157"
+            status: To Do
+            summary: Research and integrate two-factor authentication methods
+            children: []
+          - key: MOBL-49
+            assignee: Mitch Davis
+            id: "59159"
+            issuetype: Sub-task
+            parent:
+              key: MOBL-47
+              fields:
+                issuetype:
+                  avatarId: 10315
+                  hierarchyLevel: 0
+                  iconUrl: https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium
+                  id: "10022"
+                  name: Story
+                priority:
+                  iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+                  id: "10000"
+              id: "59157"
+            status: To Do
+            summary: Implement account recovery options for users
+            children: []
+          - key: MOBL-50
+            assignee: Mitch Davis
+            id: "59160"
+            issuetype: Sub-task
+            parent:
+              key: MOBL-47
+              fields:
+                issuetype:
+                  avatarId: 10315
+                  hierarchyLevel: 0
+                  iconUrl: https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium
+                  id: "10022"
+                  name: Story
+                priority:
+                  iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+                  id: "10000"
+              id: "59157"
+            status: To Do
+            summary: Conduct testing for two-factor authentication flow
+            children: []
+  - key: MOBL-3
+    assignee: Mitch Davis
+    id: "10024"
+    issuetype: Epic
+    status: To Do
+    summary: Vendor Dashboard
+    children: []
+  - key: MOBL-5
+    assignee: Mitch Davis
+    id: "10026"
+    issuetype: Epic
+    status: To Do
+    summary: Android Version Update
+    children:
+      - key: MOBL-26
+        assignee: Mitch Davis
+        id: "10178"
+        issuetype: Story
+        parent:
+          key: MOBL-5
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10026"
+        status: To Do
+        summary: Android Version Upgrade Notes
+        children: []
+  - key: MOBL-6
+    assignee: Mitch Davis
+    id: "10027"
+    issuetype: Epic
+    status: To Do
+    summary: Customer Application Form
+    children:
+      - key: MOBL-23
+        assignee: Admin Istrator
+        id: "10175"
+        issuetype: Story
+        parent:
+          key: MOBL-6
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg
+              id: "3"
+          id: "10027"
+        status: To Do
+        summary: Confirm login addendum from legal
+        children: []
+  - key: MOBL-30
+    assignee: Mitch Davis
+    id: "12043"
+    issuetype: Story
+    status: To Do
+    summary: "rollback deployment #23 "
+    children: []
+  - key: MOBL-32
+    assignee: Mitch Davis
+    id: "12188"
+    issuetype: Bug
+    status: To Do
+    summary: do this thing - to fix my issue
+    children: []
+  - key: MOBL-53
+    assignee: Mitch Davis
+    id: "65636"
+    issuetype: Epic
+    status: To Do
+    summary: "Self-Ordering Kiosk "
+    children: []
+  - key: MOBL-70
+    assignee: Mitch Davis
+    id: "65731"
+    issuetype: Epic
+    status: To Do
+    summary: Accessibility for Relomee Kiosk
+    children:
+      - key: MOBL-75
+        assignee: Mitch Davis
+        id: "65741"
+        issuetype: Task
+        parent:
+          key: MOBL-70
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+              id: "10000"
+          id: "65731"
+        status: To Do
+        summary: Create User Flow Diagrams for Kiosk Experience
+        children: []
+      - key: MOBL-76
+        assignee: Mitch Davis
+        id: "65743"
+        issuetype: Task
+        parent:
+          key: MOBL-70
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+              id: "10000"
+          id: "65731"
+        status: To Do
+        summary: Develop Interactive UI Prototypes for Usability Testing
+        children: []
+      - key: MOBL-77
+        assignee: Mitch Davis
+        id: "65745"
+        issuetype: Task
+        parent:
+          key: MOBL-70
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+              id: "10000"
+          id: "65731"
+        status: To Do
+        summary: Conduct Heuristic Evaluation of Kiosk UI Design
+        children: []
+  - key: MOBL-80
+    assignee: Mitch Davis
+    id: "65896"
+    issuetype: Epic
+    status: To Do
+    summary: Implement Integration of Menu Items and Customization Options for
+      Self-Service Kiosk
+    children:
+      - key: MOBL-81
+        assignee: Mitch Davis
+        id: "65902"
+        issuetype: Story
+        parent:
+          key: MOBL-80
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+              id: "10000"
+          id: "65896"
+        status: To Do
+        summary: Design Menu Item Display for Kiosk UI
+        children: []
+      - key: MOBL-84
+        assignee: Mitch Davis
+        id: "65901"
+        issuetype: Bug
+        parent:
+          key: MOBL-80
+          fields:
+            issuetype:
+              hierarchyLevel: 1
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg
+              id: "10000"
+              name: Epic
+            priority:
+              iconUrl: https://one-atlas-iire.atlassian.net/images/icons/priorities/blocker_new.svg
+              id: "10000"
+          id: "65896"
+        status: To Do
+        summary: Fix Bugs in Menu Item Display or Customization Options
+        children: []
+  - key: MOBL-86
+    assignee: Mitch Davis
+    id: "65929"
+    issuetype: Story
+    status: To Do
+    summary: Go to MD
+    children: []
+  - key: MOBL-87
+    assignee: Mitch Davis
+    id: "65962"
+    issuetype: Story
+    status: To Do
+    summary: Leave DC
+    children: []
+  - key: MOBL-88
+    assignee: Mitch Davis
+    id: "65963"
+    issuetype: Story
+    status: To Do
+    summary: Return to MD
+    children: []
+  - key: MOBL-89
+    assignee: Mitch Davis
+    id: "65964"
+    issuetype: Story
+    status: To Do
+    summary: Floo the bits
+    children: []

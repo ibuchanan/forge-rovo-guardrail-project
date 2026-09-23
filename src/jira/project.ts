@@ -125,11 +125,17 @@ export interface RequestIssuesForProject extends RequestProject {
   fields: Array<string>;
 }
 
+/*
+Because of [JRACLOUD-9197](https://jira.atlassian.com/browse/JRACLOUD-9197)
+we can't get the whole tree in 1 query,
+without a lot of potential for overfetching.
+And, we can't sort on hierarchy to help simplify the tree-building logic.
+*/
 export function listPlannedIssuesForProject(payload: RequestIssuesForProject) {
   if (payload.fields === undefined) {
     payload.fields = [];
   }
-  const jql = `project = "${payload.projectKey}" AND statusCategory = "To Do" ORDER BY key ASC`;
+  const jql = `project = "${payload.projectKey}" AND statusCategory != "Done" ORDER BY key ASC`;
   // console.debug(`JQL: "${jql}"`);
   return {
     issues: listIssuesFromJql({

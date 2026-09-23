@@ -127,22 +127,29 @@ export async function* listIssuesFromJql(
         console.error(`Failed: JQL "${payload.jql}"`);
         throw new Error(`Failed for JQL "${payload.jql}"\n`);
       }
-      console.debug(`Is last page? ${responseJson.isLast}`);
-      console.debug(`Deferred: ${defer.size()}`);
+      console.debug(`WBS: Is last page? ${responseJson.isLast}`);
+      console.debug(`WBS: Deferred issues = ${defer.size()}`);
     } catch (error) {
       console.error(error);
       throw new Error(`Failed for JQL "${payload.jql}"\n`);
     }
   }
   console.debug(`WBS: peek first deferred ${JSON.stringify(defer.peek())}`);
-  /*
+  console.debug(`WBS: Is defer empty? ${defer.isEmpty()}`);
   // TODO: Reprocess the deferred items to build a complete tree
   while (!defer.isEmpty()) {
-    const reprocess = yield defer.dequeue();
-    if (reprocess !== undefined) {
-      defer.enqueue(reprocess);
+    try {
+      const deferredWorkitem = defer.dequeue();
+      console.debug(`WBS: deferred workitem ${JSON.stringify(deferredWorkitem)}`);
+      // TODO: Parents & children can have different workflow states; need to get parent if excluded from the initial search
+      // const reprocess = yield deferredWorkitem;
+      // if (reprocess !== undefined) {
+      //   defer.enqueue(reprocess);
+      // }
+      console.debug(`WBS: Deferred issues = ${defer.size()}`);
+    } catch (error) {
+      console.error(error);
+      throw new Error(`Failed to process deferred issues. Peek next: ${JSON.stringify(defer.peek())}\n`);
     }
-    // console.debug(`Defer: ${defer.size()}`);
   }
-  */
 }

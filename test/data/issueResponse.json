@@ -1,29 +1,67 @@
 {
   "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-  "id": "10022",
-  "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issue/10022",
-  "key": "MOBL-1",
+  "id": "10173",
+  "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issue/10173",
+  "key": "MOBL-21",
   "fields": {
-    "summary": "iOS Platform Update",
+    "summary": "Firefox performance improvement",
     "issuetype": {
-      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10000",
-      "id": "10000",
-      "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
-      "iconUrl": "https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg",
-      "name": "Epic",
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10022",
+      "id": "10022",
+      "description": "Functionality or a feature expressed as a user goal.",
+      "iconUrl": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+      "name": "Story",
       "subtask": false,
-      "hierarchyLevel": 1
+      "avatarId": 10315,
+      "hierarchyLevel": 0
+    },
+    "parent": {
+      "id": "10025",
+      "key": "MOBL-4",
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issue/10025",
+      "fields": {
+        "summary": "User Interface Revisions",
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/status/3",
+          "description": "This issue is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://one-atlas-iire.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "priority": {
+          "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/priority/3",
+          "iconUrl": "https://one-atlas-iire.atlassian.net/images/icons/priorities/medium_new.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://one-atlas-iire.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        }
+      }
     },
     "assignee": {
-      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/user?accountId=60ad2eb506bf0c006a432a17",
-      "accountId": "60ad2eb506bf0c006a432a17",
+      "self": "https://api.atlassian.com/ex/jira/639c4c97-0caf-459b-bc27-da6250725163/rest/api/3/user?accountId=60ad2d2a06bf0c006a42fa84",
+      "accountId": "60ad2d2a06bf0c006a42fa84",
       "avatarUrls": {
-        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2eb506bf0c006a432a17/c850d222-b5cc-471e-9c9a-151dd087addc/48",
-        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2eb506bf0c006a432a17/c850d222-b5cc-471e-9c9a-151dd087addc/24",
-        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2eb506bf0c006a432a17/c850d222-b5cc-471e-9c9a-151dd087addc/16",
-        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2eb506bf0c006a432a17/c850d222-b5cc-471e-9c9a-151dd087addc/32"
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60ad2d2a06bf0c006a42fa84/465505e0-6af6-4f5f-b5af-202e72fb3e4b/32"
       },
-      "displayName": "Mitch Davis",
+      "displayName": "Alana Grant",
       "active": true,
       "timeZone": "America/New_York",
       "accountType": "atlassian"

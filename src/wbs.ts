@@ -29,6 +29,8 @@ export const workitemContentFields: Array<ContentField> = [
   { name: "Parent", type: ContentType.Frontmatter },
 ];
 */
+// TODO: Due date & even start date?
+// TODO: Linked Issues, and what's the text representation?
 const FIELDS = ["issuetype", "summary", "", "assignee", "", "status", "parent"];
 
 type RequestedFields = Record<string, any>;
@@ -85,7 +87,7 @@ const EXTRANEOUS_PROJECT_KEYS = [
   "roles",
   "versions",
 ];
-const EXTRANEOUS_ISSUE_KEYS = ["description"];
+const EXTRANEOUS_ISSUE_KEYS = ["description", "issuetype", "parent"];
 function filterAndSortKeys(obj: any): any {
   if (typeof obj !== "object" || obj === null) {
     return obj;
@@ -163,7 +165,9 @@ export async function fetchWbsContentFromProject(
     if (issue.value.fields.parent) {
       const parent = root.index.get(issue.value.fields.parent.key);
       if (parent) {
-        console.debug(`WBS: ${parent} adopting ${issue.value.key}`);
+        console.debug(
+          `WBS: ${parent.key} adopting ${issue.value.key}`,
+        );
         root.adopt(parent, issue.value);
         issue = await issues.next();
       } else {
